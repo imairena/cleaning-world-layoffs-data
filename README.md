@@ -28,4 +28,5 @@ Identified and removed duplicate entries by checking for identical rows across k
 ### 4. Remove Unnecessary Columns
 Dropped helper columns used during the cleaning process (like row numbers) to keep the final dataset lean.
 
+## 📊 World Layoffs Dashboard
 ![World Layoffs Dashboard](world_layoffs_Ian.png)
