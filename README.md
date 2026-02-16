@@ -19,7 +19,7 @@ Identified and removed duplicate entries by checking for identical rows across k
 * **Trimming:** Removed unnecessary white spaces from company names.
 * **Industry Alignment:** Standardized industry names (e.g., ensuring "Crypto", "CryptoCurrency", and "Crypto Currency" were all merged into one category).
 * **Location Check:** Fixed inconsistent city or country names.
-* * **Date Formatting:** Converted the `date` column from text format to a `MM-DD-YYYY` date format to enable time-series analysis.
+* **Date Formatting:** Converted the `date` column from text format to a `MM-DD-YYYY` date format to enable time-series analysis.
 
 ### 3. Handle Null and Blank Values
 * Populated missing `industry` data by cross-referencing other entries for the same company.
