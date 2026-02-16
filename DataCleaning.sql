@@ -194,14 +194,14 @@ SET SQL_SAFE_UPDATES = 1;
 SET SQL_SAFE_UPDATES = 0;
 DELETE
 FROM layoffs_staging2
-WHERE total_laid_off = NULL
-AND percentage_laid_off = NULL;
+WHERE total_laid_off IS NULL
+AND percentage_laid_off IS NULL;
 SET SQL_SAFE_UPDATES = 1;
 
 SELECT * -- checking the update was done properly
 FROM layoffs_staging2
-WHERE total_laid_off = NULL
-AND percentage_laid_off = NULL;
+WHERE total_laid_off IS NULL
+AND percentage_laid_off IS NULL;
 
 
 -- deleting entire row_num column
