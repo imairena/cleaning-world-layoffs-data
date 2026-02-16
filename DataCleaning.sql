@@ -171,7 +171,8 @@ FROM layoffs_staging2 t1
 JOIN layoffs_staging t2
 ON t1.company = t2.company
 WHERE t1.industry IS NULL
-AND t2.industry IS NOT NULL;
+AND t2.industry IS NOT NULL
+AND t2.industry != '';;
 
 SET SQL_SAFE_UPDATES = 0; -- Turning the command above into an update statement to actually make changes
 UPDATE layoffs_staging2 t1
@@ -179,7 +180,8 @@ JOIN layoffs_staging t2
 ON t1.company = t2.company
 SET t1.industry = t2.industry
 WHERE t1.industry IS NULL
-AND t2.industry IS NOT NULL;
+AND t2.industry IS NOT NULL
+AND t2.industry != '';;
 SET SQL_SAFE_UPDATES = 1;
 
 -- Rows that still have NULL as the industry field may need to be deleted since there is no way to know what industry they belong to
@@ -189,7 +191,7 @@ SET SQL_SAFE_UPDATES = 1;
 -- (especially funds_raised_millions). If we were given a total_employees column we could do some math to calculate total and percentage laid off
 
 
--- ------------------------------ DELETING UNNECESSARY COLUMS ---------------------------------------
+-- ------------------------------ DELETING UNNECESSARY COLUMNS ---------------------------------------
 -- columns where both total and percentage laid off are NULL
 SET SQL_SAFE_UPDATES = 0;
 DELETE
